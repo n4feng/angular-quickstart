@@ -8,7 +8,7 @@
     <script src="./angular.min.js"></script>
     <script src="./fabric.js"></script>
     <script src="./jquery.min.js"></script>
-    
+    <script src="./fabric_with_gestures.js"></script>
 
   </head>
   <!-- 3. Display the application -->
@@ -24,23 +24,25 @@
 
         <a href="#" class="upload" ng-click="active='To upload your picture, please click select file button'">Upload</a>
         <a href="#" class="save" ng-click="active='To save your picture, please click save button'">Save</a>
-        <!-- <a href="#" class="services" ng-click="active='services'">Services</a>
-        <a href="#" class="contact" ng-click="active='contact'">Contact</a> -->
+        <a href="#" class="Text" ng-click="active='You can double click the edited area to add text'">Text</a>
+        <!--<a href="#" class="contact" ng-click="active='contact'">Contact</a> -->
       </nav>
       <input type="file" id="file"><br />
+      <p> 
+        Edit History: 
+        <b id="info" style="background: #eef; width: 583px; padding: 10px; overflow: scroll; height: 40px"></b></p>
       <p>
-        <b>
+        <b ondblclick = "textboxPump()">
           <canvas id="canvas" width="450" height="450"></canvas>
         </b>
       </p>
       <script src="./controller.js"></script>
-
       <!-- ng-show will show an element if the value in the quotes is truthful,
          while ng-hide does the opposite. Because the active variable is not set
          initially, this will cause the first paragraph to be visible. -->
 
       <p ng-hide="active">
-        Please select where you want to start
+        Choose buttom to see the guide for each features.
       </p>
       <p ng-show="active">
         {{active}}
