@@ -8,13 +8,12 @@
     <script src="./angular.min.js"></script>
     <script src="./fabric.js"></script>
     <script src="./jquery.min.js"></script>
-    <script src="./fabric_with_gestures.js"></script>
 
   </head>
   <!-- 3. Display the application -->
-  <body ng-app>
+  <body>
     <!-- Adding the ng-app declaration to initialize AngularJS -->
-    <div id="main" ng-app>
+    <div ng-app ="myApp" ng-controller="myCtrl" id="main" >
       <!-- The navigation menu will get the value of the "active" variable as a class.
          The $event.preventDefault() stops the page from jumping when a link is clicked. -->
 
@@ -46,6 +45,11 @@
       </p>
       <p ng-show="active">
         {{active}}
+      </p>
+      <p>
+        <form ng-submit = "saveImage()">
+          <button type="submit">Save</button>
+        </form>
       </p>
     </div>
   </body>
