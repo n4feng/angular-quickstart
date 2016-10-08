@@ -74,3 +74,16 @@ canvas.on({
     eventTime = currentTime
   }
 });*/
+
+/*prompt out in angular
+$http.show(
+      $http.alert()
+      .clickOutsideToclose(true)
+      .title('Saved')
+      .textContent('Your design have been saved')
+      .ariaLabel('Saved prompt')
+      .ok("Nice!")
+      .openFrom('#left')
+      .closeTo(angular.element(document.querySelector('#right')))
+    );
+*/

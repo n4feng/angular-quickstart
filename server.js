@@ -1,9 +1,10 @@
-// set up
+// set up ------------------------------------------------------
 var express = require('express');
 var app = express();
 var fs = require('fs');
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
 var saveCount = 1;
-//functions
 // application -------------------------------------------------------------
 app.use(express.static('./public'));
 
@@ -12,7 +13,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  fs.writeFile(__dirname+"/save/post"+saveCount.toString()+".json", req.body, function(err) {
+  fs.writeFile(__dirname+"/save/post"+saveCount.toString()+
+    ".json", JSON.stringify(req.body), function(err) {
     if(err) {
        return console.log(err);
     }

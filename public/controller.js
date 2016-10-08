@@ -55,15 +55,15 @@ function textboxPump(){
 var app = angular.module('myApp',[]);
 app.controller('myCtrl',function ($scope, $http){
   $scope.saveImage = function(){
-    debugger;
-    var json = JSON.stringify(canvas);
     $http({
       url: 'http://localhost:8080',
       method: "POST",
-      data: json,
+      data: canvas,
       header: 'Content-Type: application/json'
     });
-
-  }
+    alert("Your work have been saved");
+  };
 });
+
+
 
